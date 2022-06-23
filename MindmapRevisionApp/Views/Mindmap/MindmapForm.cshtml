@@ -1,0 +1,39 @@
+﻿@model MindmapRevisionApp.Models.Mindmap
+@{
+    ViewBag.Title = "New Mindmap";
+}
+
+@if (Model.Id == 0)
+{
+    <h1>New Mindmap</h1>
+}
+else
+{
+    <h1>Edit Mindmap</h1>
+}
+
+@using (Html.BeginForm("Save", "Mindmap"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.RevisionsCount)
+        @Html.TextBoxFor(m => m.RevisionsCount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RevisionsCount)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control input-lg" })
+        @Html.ValidationMessageFor(m => m.Content)
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

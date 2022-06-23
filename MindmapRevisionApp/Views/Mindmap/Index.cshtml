@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MindmapRevisionApp.Models.Mindmap>
+@{
+    ViewBag.Title = "Mindmaps";
+}
+
+<h2>Mindmaps List</h2>
+<div> 
+    @Html.ActionLink("New Mindmap", "New", "Mindmap", null, new { @class = "btn btn-primary" })
+</div>
+<div>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Revisions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mindmap in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(mindmap.Title, "View", "Mindmap", new { id = mindmap.Id }, null)</td>
+                    <td>@mindmap.RevisionsCount</td>
+                    <td>@Html.ActionLink("Edit", "Edit", "Mindmap", new { id = mindmap.Id }, new {@class = "btn btn-link" })</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

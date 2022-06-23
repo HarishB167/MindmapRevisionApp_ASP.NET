@@ -10,7 +10,8 @@ namespace MindmapRevisionApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View();
+            return RedirectToAction("Index", "Mindmap");
         }
 
         public ActionResult About()

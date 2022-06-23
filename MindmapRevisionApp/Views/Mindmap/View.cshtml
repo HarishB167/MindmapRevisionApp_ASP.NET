@@ -1,0 +1,13 @@
+﻿@model MindmapRevisionApp.Models.Mindmap
+@{
+    ViewBag.Title = "View : " + Model.Title;
+}
+
+<h1>@Model.Title</h1>
+<div class="row">
+    <div class="col-md-2">Revisions : @Model.RevisionsCount</div>
+    @Html.ActionLink("+", "IncrementRevisions", "Mindmap", new { id = Model.Id }, new { @class = "btn btn-primary col-md-auto" })
+</div>
+<div style="width: 500px; height: 500px;"> 
+    <textarea class="mindmap-content" >@Model.Content</textarea>
+</div>
