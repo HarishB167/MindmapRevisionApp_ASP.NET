@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202206222233582_AddingMindmapModel.Designer.cs">
       <DependentUpon>202206222233582_AddingMindmapModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206281513036_AddingTopicFieldToMindmapModel.cs" />
+    <Compile Include="Migrations\202206281513036_AddingTopicFieldToMindmapModel.Designer.cs">
+      <DependentUpon>202206281513036_AddingTopicFieldToMindmapModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -200,6 +204,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Mindmap_1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -267,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206222233582_AddingMindmapModel.resx">
       <DependentUpon>202206222233582_AddingMindmapModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206281513036_AddingTopicFieldToMindmapModel.resx">
+      <DependentUpon>202206281513036_AddingTopicFieldToMindmapModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

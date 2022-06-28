@@ -20,13 +20,18 @@ else
         @Html.ValidationMessageFor(m => m.Title)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.Topic)
+        @Html.TextBoxFor(m => m.Topic, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Topic)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.RevisionsCount)
         @Html.TextBoxFor(m => m.RevisionsCount, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.RevisionsCount)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Content)
-        @Html.TextAreaFor(m => m.Content, new { @class = "form-control input-lg" })
+        @Html.TextAreaFor(m => m.Content, new { @class = "mindmap-content" })
         @Html.ValidationMessageFor(m => m.Content)
     </div>
     @Html.HiddenFor(m => m.Id)

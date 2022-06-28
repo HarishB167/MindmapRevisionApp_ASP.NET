@@ -12,6 +12,7 @@
         <thead>
             <tr>
                 <th>Title</th>
+                <th>Topic</th>
                 <th>Revisions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
             {
                 <tr>
                     <td>@Html.ActionLink(mindmap.Title, "View", "Mindmap", new { id = mindmap.Id }, null)</td>
+                    <td>@mindmap.Topic</td>
                     <td>@mindmap.RevisionsCount</td>
                     <td>@Html.ActionLink("Edit", "Edit", "Mindmap", new { id = mindmap.Id }, new {@class = "btn btn-link" })</td>
                 </tr>

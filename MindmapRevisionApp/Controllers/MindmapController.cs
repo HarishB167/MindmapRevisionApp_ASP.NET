@@ -45,6 +45,7 @@ namespace MindmapRevisionApp.Controllers
             {
                 var mindmapInDb = _context.Mindmaps.Single(c => c.Id == mindmap.Id);
                 mindmapInDb.Title = mindmap.Title;
+                mindmapInDb.Topic = mindmap.Topic;
                 mindmapInDb.Content = mindmap.Content;
                 mindmapInDb.RevisionsCount = mindmap.RevisionsCount;
             }
