@@ -5,6 +5,7 @@
 
 <h1>@Model.Title</h1>
 <h5>@Model.Topic</h5>
+<button data-mindmap-id="@Model.Id" class="btn-link js-delete">Delete</button>
 <div class="row">
     <div class="col-md-2">Revisions : @Model.RevisionsCount</div>
     @Html.ActionLink("+", "IncrementRevisions", "Mindmap", new { id = Model.Id }, new { @class = "btn btn-primary col-md-auto" })
@@ -12,3 +13,25 @@
 <div style="width: 500px; height: 500px;"> 
     <textarea class="mindmap-content" >@Model.Content</textarea>
 </div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-delete").on("click", function() {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/mindmap/" + button.attr("data-mindmap-id"),
+                            method: "DELETE",
+                            success: function () {
+                                window.location.href = "/Mindmap";
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
